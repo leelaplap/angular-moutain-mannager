@@ -22,5 +22,11 @@ export class MountainCreateComponent implements OnInit {
     console.log(this.addMountainForm.value);
   }
 
+  get name() {
+    return this.addMountainForm.get('name');
+  }
 
+  get country() {
+    return this.addMountainForm.get('country');
+  }
 }
