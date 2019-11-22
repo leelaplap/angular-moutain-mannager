@@ -13,6 +13,7 @@ export class MountainCreateComponent implements OnInit {
   addMountainForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(4)]],
     country: ['', [Validators.required, Validators.minLength(4)]],
+    star: ['', [Validators.required]],
   });
 
   constructor(private fb: FormBuilder,
@@ -26,7 +27,6 @@ export class MountainCreateComponent implements OnInit {
   submit() {
     this.submitted = true;
     const data = this.addMountainForm.value;
-
     this.ms.add(data);
     this.route.navigate(['']);
   }
@@ -37,5 +37,9 @@ export class MountainCreateComponent implements OnInit {
 
   get country() {
     return this.addMountainForm.get('country');
+  }
+
+  get star() {
+    return this.addMountainForm.get('star');
   }
 }

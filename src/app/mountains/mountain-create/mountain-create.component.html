@@ -18,10 +18,22 @@
             <label>Mountain Country</label>
             <input type="text" class="form-control" formControlName="country">
             <div *ngIf="country.invalid && country.touched">
-              <div *ngIf="name.errors.required">
+              <div *ngIf="country.errors.required">
                 <p>Không được để trống dữ liệu </p>
               </div>
               <div *ngIf="country.errors.minlength">
+                <p>Không được ít hơn 4 kí tự</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mountain Rating</label>
+            <input type="text" class="form-control" formControlName="star">
+            <div *ngIf="star.invalid && star.touched">
+              <div *ngIf="star.errors.required">
+                <p>Không được để trống dữ liệu </p>
+              </div>
+              <div *ngIf="star.errors.minlength">
                 <p>Không được ít hơn 4 kí tự</p>
               </div>
             </div>
