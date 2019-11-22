@@ -7,6 +7,7 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./mountain-create.component.scss']
 })
 export class MountainCreateComponent implements OnInit {
+  submitted = false;
   addMountainForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(4)]],
     country: ['', [Validators.required, Validators.minLength(4)]],
@@ -19,6 +20,7 @@ export class MountainCreateComponent implements OnInit {
   }
 
   submit() {
+    this.submitted = true;
     console.log(this.addMountainForm.value);
   }
 
