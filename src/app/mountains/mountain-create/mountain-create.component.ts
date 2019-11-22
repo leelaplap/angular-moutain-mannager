@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import {MountainService} from '../../services/mountain.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-mountain-create',
@@ -13,7 +15,9 @@ export class MountainCreateComponent implements OnInit {
     country: ['', [Validators.required, Validators.minLength(4)]],
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private ms: MountainService,
+              private route: Router) {
   }
 
   ngOnInit() {
@@ -21,7 +25,10 @@ export class MountainCreateComponent implements OnInit {
 
   submit() {
     this.submitted = true;
-    console.log(this.addMountainForm.value);
+    const data = this.addMountainForm.value;
+
+    this.ms.add(data);
+    this.route.navigate(['']);
   }
 
   get name() {

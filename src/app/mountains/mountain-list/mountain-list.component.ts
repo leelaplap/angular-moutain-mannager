@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IMountain} from '../imountain';
+import {MountainService} from '../../services/mountain.service';
 
 @Component({
   selector: 'app-mountain-list',
@@ -7,31 +8,12 @@ import {IMountain} from '../imountain';
   styleUrls: ['./mountain-list.component.scss']
 })
 export class MountainListComponent implements OnInit {
-  mountains: IMountain[] = [
-    {
-      name: 'Everest',
-      country: 'Nepal',
-      image: 'assets/images/mountain/anh1.jpg',
-      star: 2.5,
-    },
-    {
-      name: 'Himalaya',
-      country: 'India',
-      image: 'assets/images/mountain/anh2.jpg',
-      star: 4,
-    },
-    {
-      name: 'Phú sĩ',
-      country: 'Nepal',
-      image: 'assets/images/mountain/phusi.jpg',
-      star: 1,
-    }
-  ];
+  mountains = this.ms.getAll();
   showImg = true;
   listMountain: IMountain[] = [];
   showMess: string;
 
-  constructor() {
+  constructor(private ms: MountainService) {
   }
 
   ngOnInit() {
