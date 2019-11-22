@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { MountainListComponent } from './mountains/mountain-list/mountain-list.component';
 import { StarComponent } from './stars/star/star.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MountainCreateComponent } from './mountains/mountain-create/mountain-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MountainListComponent,
-    StarComponent
+    StarComponent,
+    MountainCreateComponent
   ],
   imports: [
     BrowserModule,
