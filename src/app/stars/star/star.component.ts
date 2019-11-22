@@ -20,7 +20,7 @@ export class StarComponent implements OnInit {
   }
 
   click() {
-    this.message.emit('Số sao được đấnh giá là: ' + this.star);
+    this.message.emit('Số sao được đấnh giá là: ' + this.star + ' sao');
   }
 
 }
