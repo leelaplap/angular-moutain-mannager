@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MountainListComponent } from './mountains/mountain-list/mountain-list.component';
 import { StarComponent } from './stars/star/star.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { StarComponent } from './stars/star/star.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
